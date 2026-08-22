@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetime - Live Clock</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <main class="clock-shell">
+    <section class="clock-card" aria-label="Live clock">
+      <p class="eyebrow">LOCAL MOMENT</p>
+      <div id="clock" class="clock" aria-live="polite">--:--:--</div>
+      <div id="date" class="date">Loading date...</div>
+      <div class="timezone-row">
+        <span class="timezone-marker" aria-hidden="true"></span>
+        <label for="timezone">Timezone</label>
+        <select id="timezone">
+          <option>Local Time</option>
+          <option>UTC</option>
+          <option>Asia/Tehran</option>
+          <option>Asia/Baku</option>
+          <option>Europe/London</option>
+          <option>America/New_York</option>
+          <option>Asia/Tokyo</option>
+        </select>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+  </main>
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
